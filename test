@@ -1,0 +1,140 @@
+#include <stdio.h>
+
+// 1. Verificação de senha
+void senha() {
+    int senhaDigitada;
+
+    do {
+        printf("Digite a senha: ");
+        scanf("%d", &senhaDigitada);
+
+        if (senhaDigitada != 123456) {
+            printf("Senha inválida, tente novamente.\n");
+        }
+    } while (senhaDigitada != 123456);
+
+    printf("Senha correta. Seja bem-vindo.\n");
+}
+
+// 2. Validação de número entre 1 e 6
+void validarNumero() {
+    int numero;
+
+    printf("Digite um número entre 1 e 6: ");
+    scanf("%d", &numero);
+
+    while (numero < 1 || numero > 6) {
+        printf("Valor inválido. Tente novamente: ");
+        scanf("%d", &numero);
+    }
+
+    printf("Número válido: %d\n", numero);
+}
+
+// 3. Contador de 1 a 6 com ENQUANTO (while)
+void contarComWhile() {
+    int i = 1;
+    while (i <= 6) {
+        printf("%d\n", i);
+        i++;
+    }
+
+    // Comentário: Usar "for" seria mais direto aqui, então é mais fácil dar manutenção.
+}
+
+// 4. Jogo de adivinhação
+void adivinhacao() {
+    int numero1, numero2;
+
+    printf("Usuário 1, digite um número: ");
+    scanf("%d", &numero1);
+
+    do {
+        printf("Usuário 2, tente adivinhar o número: ");
+        scanf("%d", &numero2);
+
+        if (numero2 != numero1) {
+            printf("Tente novamente!\n");
+        }
+    } while (numero2 != numero1);
+
+    printf("Parabéns, você acertou!\n");
+}
+
+// 5. Menu com opções
+void menuSimples() {
+    int opcao;
+
+    do {
+        printf("\nMENU:\n1 - Dizer \"Oi\"\n2 - Dizer \"Olá\"\n0 - SAIR\nEscolha: ");
+        scanf("%d", &opcao);
+
+        switch (opcao) {
+            case 1:
+                printf("Oi\n");
+                break;
+            case 2:
+                printf("Olá\n");
+                break;
+            case 0:
+                printf("Saindo...\n");
+                break;
+            default:
+                printf("Opção inválida.\n");
+        }
+    } while (opcao != 0);
+}
+
+// 6. Simulador de Pokedex
+void pokedex() {
+    int escolha;
+
+    do {
+        printf("\nPokedex:\n");
+        printf("1 - Pikachu\n");
+        printf("2 - Bulbassauro\n");
+        printf("3 - Charmander\n");
+        printf("0 - Sair do pokedex\n");
+        printf("Escolha uma opção: ");
+        scanf("%d", &escolha);
+
+        switch (escolha) {
+            case 1:
+                printf("Pokémon elétrico da categoria rato.\n");
+                break;
+            case 2:
+                printf("Pokémon de grama da categoria semente.\n");
+                break;
+            case 3:
+                printf("Pokémon de fogo da categoria lagarto.\n");
+                break;
+            case 0:
+                printf("Encerrando Pokedex.\n");
+                break;
+            default:
+                printf("Pokémon não cadastrado. Há 890 Pokémons! Temos que pegar!\n");
+        }
+    } while (escolha != 0);
+}
+
+// Função principal
+int main() {
+    // Você pode chamar cada função individualmente para testar:
+    
+    // senha();
+    // validarNumero();
+    // contarComWhile();
+    // adivinhacao();
+    // menuSimples();
+    // pokedex();
+
+    // Exemplo: rodar tudo de uma vez (opcional)
+    senha();
+    validarNumero();
+    contarComWhile();
+    adivinhacao();
+    menuSimples();
+    pokedex();
+
+    return 0;
+}
