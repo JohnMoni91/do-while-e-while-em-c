@@ -7,15 +7,14 @@ int main(){
 	   
 	   setlocale(LC_ALL, "Portuguese");
 	   
-	   printf("\n Ol·. Por favor, digite sua senha; ");
+	   printf("\n Ol√°. Por favor, digite sua senha; ");
 	   scanf("%d", &senha);
 	   
 	   while((senha != 123456) && (cont<3))
 	   {
-		   printf("\n senha incorreta, tente novamente");
+		   printf("\n Senha inv√°lida, tente novamente");
 		   scanf("%d", &senha);
 		   cont++
 	   } if (senha == 123456);
-	   printf("\n Oba, vocÍ acertou!")		
-
+	   printf("\n Senha correta. Seja bem-vindo");
 }
